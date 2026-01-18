@@ -1,6 +1,8 @@
 package com.joaoneto.workshopmongo.recursos;
 
 import com.joaoneto.workshopmongo.dominio.Usuario;
+import com.joaoneto.workshopmongo.servicos.ServicoUsuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +16,12 @@ import java.util.List;
 @RequestMapping("/usuarios")
 public class RecursoUsuario {
 
+    @Autowired
+    private ServicoUsuario servico;
+
     @GetMapping
     public ResponseEntity<List<Usuario>> encontrarTudo() {
-        Usuario joao = new Usuario("1", "Joao Neto", "joaoneto@gmail.com");
-        Usuario maria = new Usuario("2", "Maria Clara", "mariaclara@gmail.com");
-        List<Usuario> list = new ArrayList<>();
-        list.addAll(Arrays.asList(joao, maria));
+        List<Usuario> list = servico.encontrarTudo();
         return ResponseEntity.ok().body(list);
     }
 }
