@@ -1,6 +1,7 @@
 package com.joaoneto.workshopmongo.servicos;
 
 import com.joaoneto.workshopmongo.dominio.Usuario;
+import com.joaoneto.workshopmongo.dto.DtoUsuario;
 import com.joaoneto.workshopmongo.repositorios.RepositorioUsuario;
 import com.joaoneto.workshopmongo.servicos.excecao.ExcecaoParaObjetoNaoEncontrado;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,13 @@ public class ServicoUsuario {
               .orElseThrow(() ->
                       new ExcecaoParaObjetoNaoEncontrado("Objeto nao encontrado")
               );
+    }
+
+    public Usuario insert(Usuario obj) {
+        return repositorio.insert(obj);
+    }
+
+    public Usuario fromDTO(DtoUsuario objDto) {
+        return new Usuario(objDto.getId(), objDto.getNome(), objDto.getEmail());
     }
 }
