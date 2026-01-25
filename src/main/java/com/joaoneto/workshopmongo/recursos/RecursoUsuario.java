@@ -7,6 +7,7 @@ import com.joaoneto.workshopmongo.servicos.excecao.ExcecaoParaObjetoNaoEncontrad
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.DeleteExchange;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriBuilder;
 
@@ -42,6 +43,12 @@ public class RecursoUsuario {
         obj = servico.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id) {
+        servico.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

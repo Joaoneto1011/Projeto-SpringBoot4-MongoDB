@@ -30,6 +30,11 @@ public class ServicoUsuario {
         return repositorio.insert(obj);
     }
 
+    public void delete(String id) {
+        findById(id);
+        repositorio.deleteById(id);
+    }
+
     public Usuario fromDTO(DtoUsuario objDto) {
         return new Usuario(objDto.getId(), objDto.getNome(), objDto.getEmail());
     }
