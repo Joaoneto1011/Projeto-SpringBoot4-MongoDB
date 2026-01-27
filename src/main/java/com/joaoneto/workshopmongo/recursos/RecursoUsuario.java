@@ -1,5 +1,6 @@
 package com.joaoneto.workshopmongo.recursos;
 
+import com.joaoneto.workshopmongo.dominio.Post;
 import com.joaoneto.workshopmongo.dominio.Usuario;
 import com.joaoneto.workshopmongo.dto.DtoUsuario;
 import com.joaoneto.workshopmongo.servicos.ServicoUsuario;
@@ -57,6 +58,12 @@ public class RecursoUsuario {
         obj.setId(id);
         obj = servico.update(obj);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        Usuario obj = servico.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
     }
 
 
