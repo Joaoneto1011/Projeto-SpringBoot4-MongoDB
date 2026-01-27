@@ -2,6 +2,7 @@ package com.joaoneto.workshopmongo.config;
 
 import com.joaoneto.workshopmongo.dominio.Post;
 import com.joaoneto.workshopmongo.dominio.Usuario;
+import com.joaoneto.workshopmongo.dto.DtoAutor;
 import com.joaoneto.workshopmongo.repositorios.RepositorioPost;
 import com.joaoneto.workshopmongo.repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,11 @@ public class Instanciacao implements CommandLineRunner {
         Usuario joao = new Usuario(null, "Joao Neto", "joaoneto@gmail.com");
         Usuario silvania = new Usuario(null, "Silvania Martins", "silvaniamartins@gmail.com");
 
-        Post post1 = new Post(null, sdf.parse("21/03/2025"), "Partiu viagem", "Vou viajar para Sao Paulo. Abraços!", maria );
-        Post post2 = new Post(null, sdf.parse("23/03/2025"), "Bom dia", "Acordei feliz hoje!", maria);
-
         repositorioUsuario.saveAll(Arrays.asList(maria, joao, silvania));
+        
+        Post post1 = new Post(null, sdf.parse("21/03/2025"), "Partiu viagem", "Vou viajar para Sao Paulo. Abraços!", new DtoAutor(maria));
+        Post post2 = new Post(null, sdf.parse("23/03/2025"), "Bom dia", "Acordei feliz hoje!", new DtoAutor(maria));
+
         repositorioPost.saveAll(Arrays.asList(post1, post2));
     }
 }
