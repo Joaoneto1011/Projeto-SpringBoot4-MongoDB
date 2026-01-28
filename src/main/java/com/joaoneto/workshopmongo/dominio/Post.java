@@ -1,11 +1,14 @@
 package com.joaoneto.workshopmongo.dominio;
 
 import com.joaoneto.workshopmongo.dto.DtoAutor;
+import com.joaoneto.workshopmongo.dto.DtoComentario;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Document
@@ -17,6 +20,8 @@ public class Post implements Serializable {
     private String titulo;
     private String corpo;
     private DtoAutor autor;
+
+    private List<DtoComentario> comentarios = new ArrayList<>();
 
     public Post() {
     }
@@ -67,6 +72,10 @@ public class Post implements Serializable {
 
     public void setAutor(DtoAutor autor) {
         this.autor = autor;
+    }
+
+    public List<DtoComentario> getComentarios() {
+        return comentarios;
     }
 
     @Override
