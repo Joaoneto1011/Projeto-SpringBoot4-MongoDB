@@ -48,6 +48,7 @@ public class Instanciacao implements CommandLineRunner {
         post1.getComentarios().addAll(Arrays.asList(comentario1, comentario2));
         post2.getComentarios().addAll(Arrays.asList(comentario3));
 
+
         repositorioPost.saveAll(Arrays.asList(post1, post2));
 
         maria.getPosts().addAll(Arrays.asList(post1, post2));

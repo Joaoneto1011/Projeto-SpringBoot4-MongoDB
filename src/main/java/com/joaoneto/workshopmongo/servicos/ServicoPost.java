@@ -23,4 +23,8 @@ public class ServicoPost {
                       new ExcecaoParaObjetoNaoEncontrado("Objeto nao encontrado")
               );
     }
+
+    public List<Post> findbyTitulo(String texto) {
+        return repositorioPost.findByTituloContainingIgnoreCase(texto);
+    }
 }
