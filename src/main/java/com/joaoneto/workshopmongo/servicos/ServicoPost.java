@@ -25,6 +25,6 @@ public class ServicoPost {
     }
 
     public List<Post> findbyTitulo(String texto) {
-        return repositorioPost.findByTituloContainingIgnoreCase(texto);
+        return repositorioPost.findByTitulo(texto);
     }
 }
