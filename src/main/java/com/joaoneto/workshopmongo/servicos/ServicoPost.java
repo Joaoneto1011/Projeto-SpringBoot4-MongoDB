@@ -9,6 +9,7 @@ import com.joaoneto.workshopmongo.servicos.excecao.ExcecaoParaObjetoNaoEncontrad
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -26,5 +27,10 @@ public class ServicoPost {
 
     public List<Post> findbyTitulo(String texto) {
         return repositorioPost.findByTitulo(texto);
+    }
+
+    public List<Post> pesquisaCompleta(String texto, Date dataMinima, Date dataMaxima) {
+        dataMaxima = new Date(dataMaxima.getTime() + 24 * 60 * 60 * 1000);
+        return repositorioPost.pesquisaCompleta(texto, dataMinima, dataMaxima);
     }
 }

@@ -13,6 +13,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,6 +36,19 @@ public class RecursoPost {
 
         texto = URL.decodificarParametro(texto);
         List<Post> list = servicoPost.findbyTitulo(texto);
+        return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping(value = "/pesquisaCompleta")
+    public ResponseEntity<List<Post>> pesquisaCompleta(
+            @RequestParam(value = "texto", defaultValue = "") String texto,
+            @RequestParam(value = "dataMinima", defaultValue = "") String dataMinima,
+            @RequestParam(value = "dataMaxima", defaultValue = "") String dataMaxima) throws UnsupportedEncodingException, ParseException {
+
+        texto = URL.decodificarParametro(texto);
+        Date minima = URL.dataDeConversao(dataMinima, new Date(0L));
+        Date maxima = URL.dataDeConversao(dataMaxima, new Date());
+        List<Post> list = servicoPost.pesquisaCompleta(texto, minima, maxima);
         return ResponseEntity.ok().body(list);
     }
 }
