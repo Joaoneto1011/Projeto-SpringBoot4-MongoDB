@@ -233,25 +233,23 @@ java WorkshopmongoApplication
 
 http://localhost:8080
 
-🎯 Objetivo do Projeto
+## 🎯 Objetivo do Projeto
 
 Este projeto foi desenvolvido com foco em:
 
-Consolidar conhecimentos em Spring Boot e MongoDB
+- Consolidar conhecimentos em **Spring Boot** e **MongoDB**
+- Aplicar boas práticas no desenvolvimento de **APIs REST**
+- Trabalhar com **NoSQL** e consultas avançadas
+- Demonstrar domínio de **arquitetura backend**
+- Servir como **projeto de portfólio profissional**
 
-Aplicar boas práticas no desenvolvimento de APIs REST
+---
 
-Trabalhar com NoSQL e consultas avançadas
+## 👨‍💻 Autor
 
-Demonstrar domínio de arquitetura backend
+**João Neto**  
+🎓 Estudante de Sistemas de Informação  
+🚀 Em constante evolução na área de desenvolvimento backend  
 
-Servir como projeto de portfólio profissional
-
-👨‍💻 Autor
-
-João Neto
-🎓 Estudante de Sistemas de Informação
-🚀 Em constante evolução na área de desenvolvimento backend
-
-🔗 LinkedIn:
-https://www.linkedin.com/in/joao-rodrigues-neto-855757293/
+🔗 **LinkedIn:**  
+[https://www.linkedin.com/in/joao-rodrigues-neto-855757293/](https://www.linkedin.com/in/joao-rodrigues-neto-855757293/)
