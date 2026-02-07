@@ -167,6 +167,7 @@ A aplicação possui **tratamento global de erros**, retornando respostas padron
   "mensagem": "Objeto nao encontrado",
   "caminho": "/usuarios/123"
 }
+```
 
 ✔️ Uso de:
 
