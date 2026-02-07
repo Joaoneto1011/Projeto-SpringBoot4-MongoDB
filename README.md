@@ -169,87 +169,77 @@ A aplicação possui **tratamento global de erros**, retornando respostas padron
 }
 ```
 
-✔️ Uso de:
+---
 
-@ControllerAdvice
+## 🧮 Regras de Negócio Implementadas
 
-@ExceptionHandler
+- Conversão de entidades para DTOs  
+- Validação de existência antes da exclusão de dados  
+- Atualização parcial de usuários  
+- Ajuste automático de data máxima em pesquisas  
+- Consultas avançadas no MongoDB utilizando **Regex**  
+- Comentários embutidos para melhor entendimento e performance  
 
-Exceções personalizadas (RuntimeException)
+---
 
-🧮 Regras de Negócio Implementadas
+## 🧪 Testes da API
 
-Conversão de entidades para DTOs
+A API foi testada utilizando o **Postman**, validando:
 
-Validação de existência antes de exclusão
+- Status HTTP corretos  
+- Criação, atualização e remoção de recursos  
+- Pesquisas simples e avançadas  
+- Serialização JSON  
+- Tratamento adequado de exceções  
 
-Atualização parcial de usuários
+---
 
-Ajuste automático de data máxima em pesquisas
+## ▶️ Como Executar o Projeto
 
-Consultas avançadas no MongoDB com Regex
+### 🔧 Pré-requisitos
 
-Comentários embutidos para melhor performance
+- Java JDK 8 ou superior  
+- Maven  
+- MongoDB instalado e rodando localmente  
+- IDE Java (IntelliJ, Eclipse ou VS Code)  
 
-🧪 Testes da API
+---
 
-A API foi testada utilizando Postman, validando:
+### 📥 Passos para Execução
 
-Status HTTP corretos
-
-Criação, atualização e remoção de recursos
-
-Pesquisas simples e avançadas
-
-Serialização JSON
-
-Tratamento de exceções
-
-▶️ Como Executar o Projeto
-🔧 Pré-requisitos
-
-Java JDK 8 ou superior
-
-Maven
-
-MongoDB instalado e rodando localmente
-
-IDE Java (IntelliJ, Eclipse ou VS Code)
-
-📥 Passos para execução
-
-Clone o repositório:
-
+1️⃣ Clone o repositório:
+```bash
 git clone https://github.com/seu-usuario/workshop-mongo.git
-Abra o projeto na IDE
 
-Verifique o arquivo application.properties:
+2️⃣ Abra o projeto na sua IDE
 
-properties
-Copiar código
+3️⃣ Verifique o arquivo application.properties:
+
 spring.application.name=workshopmongo
 spring.mongodb.uri=mongodb://localhost:27017/workshop_mongo
-Inicie o MongoDB localmente:
 
-bash
-Copiar código
+
+4️⃣ Inicie o MongoDB localmente:
+
 mongod
-Execute a aplicação:
 
-java
-Copiar código
-WorkshopmongoApplication
-A API estará disponível em:
 
-arduino
-Copiar código
+5️⃣ Execute a aplicação:
+
+java WorkshopmongoApplication
+
+
+6️⃣ A API estará disponível em:
+
 http://localhost:8080
+
 🎯 Objetivo do Projeto
+
 Este projeto foi desenvolvido com foco em:
 
 Consolidar conhecimentos em Spring Boot e MongoDB
 
-Aplicar boas práticas de API REST
+Aplicar boas práticas no desenvolvimento de APIs REST
 
 Trabalhar com NoSQL e consultas avançadas
 
@@ -258,6 +248,7 @@ Demonstrar domínio de arquitetura backend
 Servir como projeto de portfólio profissional
 
 👨‍💻 Autor
+
 João Neto
 🎓 Estudante de Sistemas de Informação
 🚀 Em constante evolução na área de desenvolvimento backend
